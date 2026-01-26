@@ -1,49 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://crhvortksxg3c"]
+[gd_scene load_steps=6 format=3 uid="uid://c77rk21fcib4d"]
 
-[ext_resource type="Script" uid="uid://dbvr38kc35cgv" path="res://scripts/credits.gd" id="1_hi4w3"]
+[ext_resource type="Script" uid="uid://dvvk3fnjad5mj" path="res://scripts/version_notes.gd" id="1_hep5x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxo21"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hep5x"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.20392157)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
+shadow_offset = Vector2(5, 3.41)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi4w3"]
-bg_color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wokr"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.20392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spvsy"]
-bg_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7c5t5"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.20392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw1d4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmqxm"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
 
-[node name="Credits" type="Control"]
+[node name="VersionNotes" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2.0
-offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hi4w3")
+script = ExtResource("1_hep5x")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -60,42 +61,30 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
-text = "Collaborators:
-
-Programming:
-[Insert Names]
-
-Art:
-[Insert Names]
-
-Music:
-[Insert Names]
-
-
-
-
-
-"
+text = "Version 0.1:
+Added splash screen
+Added main menu
+Added version notes
+Added credits screen"
 horizontal_alignment = 1
 vertical_alignment = 3
 autowrap_mode = 2
 
-[node name="Back Button" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 571.0
 offset_right = 171.0
 offset_bottom = 638.0
-size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_mxo21")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hi4w3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_spvsy")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_gw1d4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hep5x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wokr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7c5t5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rmqxm")
 text = "Back"
 
-[connection signal="pressed" from="Back Button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

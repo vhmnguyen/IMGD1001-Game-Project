@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="IMGD 1800 Game"
-run/main_scene="uid://bd8444c7jqskh"
+run/main_scene="uid://depeexxbn8054"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=2500
