@@ -1,0 +1,209 @@
+[gd_scene load_steps=20 format=3 uid="uid://bd8444c7jqskh"]
+
+[ext_resource type="Script" uid="uid://car37asrqpnhp" path="res://scripts/main_menu.gd" id="1_0bfng"]
+[ext_resource type="Texture2D" uid="uid://c4fix3lkjrk6b" path="res://assets/IMGD_1001 TS.png" id="2_yb5uv"]
+[ext_resource type="Texture2D" uid="uid://bubj5mu8sawx3" path="res://assets/IMGD_1001 Title.png.png" id="3_h8c6n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bfng"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb5uv"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8c6n"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytedg"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3eho"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d5v2"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0qjw"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7260r"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3124"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecnfn"]
+atlas = ExtResource("2_yb5uv")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kiw3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bfng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb5uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8c6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytedg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3eho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d5v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0qjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7260r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3124")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecnfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_257up"]
+texture = ExtResource("3_h8c6n")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtjmy"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wugcc"]
+bg_color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtid3"]
+bg_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wugcc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bfng")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(18, 10.125)
+sprite_frames = SubResource("SpriteFrames_kiw3d")
+autoplay = "default"
+frame_progress = 0.725907
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = -20.0
+offset_right = 256.0
+offset_bottom = 254.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_257up")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.625
+offset_top = -106.5
+offset_right = 266.625
+offset_bottom = 215.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Start Game Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtid3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
+text = "Start Game"
+
+[node name="Version Notes Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtid3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
+text = "Version Notes"
+
+[node name="Credits Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtid3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
+text = "Credits"
+
+[connection signal="pressed" from="VBoxContainer/Start Game Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Version Notes Button" to="." method="_on_version_notes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits Button" to="." method="_on_credits_pressed"]
