@@ -10,4 +10,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_back_button_pressed() -> void:
+	ButtonClickSfx.play_click()
 	get_tree().change_scene_to_file("res://scenes/Main_Menu.tscn")

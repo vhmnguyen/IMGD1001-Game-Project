@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhcpsimwpluvu"]
+
+[ext_resource type="AudioStream" uid="uid://6cxmu6y1uoic" path="res://assets/sfx/button-press-382713.mp3" id="1_cyqlx"]
+[ext_resource type="Script" uid="uid://3nriek4hvggr" path="res://scripts/button_click_sfx.gd" id="2_v8t24"]
+
+[node name="ButtonClickSFX" type="AudioStreamPlayer"]
+stream = ExtResource("1_cyqlx")
+script = ExtResource("2_v8t24")

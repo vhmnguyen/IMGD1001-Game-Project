@@ -5,16 +5,18 @@ extends Control
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
+	ButtonClickSfx.play_click()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_version_notes_pressed() -> void:
+	ButtonClickSfx.play_click()
 	get_tree().change_scene_to_file("res://scenes/version_notes.tscn")
 
 func _on_credits_pressed() -> void:
+	ButtonClickSfx.play_click()
 	get_tree().change_scene_to_file("res://scenes/Credits.tscn")
