@@ -21,6 +21,11 @@ boot_splash/minimum_display_time=2500
 MusicPlayer="*res://scenes/music_player.tscn"
 ButtonClickSfx="*res://scenes/button_click_sfx.tscn"
 
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=1024
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

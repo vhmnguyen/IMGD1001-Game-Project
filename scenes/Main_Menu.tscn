@@ -79,7 +79,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_257up"]
@@ -129,8 +129,8 @@ grow_vertical = 2
 script = ExtResource("1_0bfng")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(18, 10.125)
+position = Vector2(510, 510.5)
+scale = Vector2(15.9375, 15.953125)
 sprite_frames = SubResource("SpriteFrames_kiw3d")
 autoplay = "default"
 frame_progress = 0.725907
@@ -140,10 +140,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -256.0
-offset_top = -20.0
-offset_right = 256.0
-offset_bottom = 254.0
+offset_left = -512.0
+offset_top = -223.0
+offset_right = 512.0
+offset_bottom = 801.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_257up")
 
@@ -155,14 +155,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -266.625
-offset_top = -106.5
+offset_top = 104.5
 offset_right = 266.625
-offset_bottom = 215.5
+offset_bottom = 426.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Start Game Button" type="Button" parent="VBoxContainer"]
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -176,7 +176,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gtid3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
 text = "Start Game"
 
-[node name="Version Notes Button" type="Button" parent="VBoxContainer"]
+[node name="VersionNotesButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -190,7 +190,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gtid3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
 text = "Version Notes"
 
-[node name="Credits Button" type="Button" parent="VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -204,6 +204,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gtid3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
 text = "Credits"
 
-[connection signal="pressed" from="VBoxContainer/Start Game Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Version Notes Button" to="." method="_on_version_notes_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits Button" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/VersionNotesButton" to="." method="_on_version_notes_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_pressed"]
