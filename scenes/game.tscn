@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://cjdf2xkq17h5j"]
+[gd_scene load_steps=3 format=3 uid="uid://cjdf2xkq17h5j"]
+
+[ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="1_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
 [node name="Game" type="Node2D"]
+position = Vector2(-1, 9)
+
+[node name="Pugalion" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(46, 32)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(43, 22)
+zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(44, 41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
