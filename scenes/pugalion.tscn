@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bkght75hkev57"]
 
 [ext_resource type="Script" uid="uid://bp54mes1s3n8h" path="res://scripts/pugalion.gd" id="1_ftvop"]
-[ext_resource type="Texture2D" uid="uid://dhvttv5ciluq0" path="res://assets/Pugalion.png" id="1_sjrqj"]
+[ext_resource type="Texture2D" uid="uid://dhvttv5ciluq0" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftvop"]
 atlas = ExtResource("1_sjrqj")
