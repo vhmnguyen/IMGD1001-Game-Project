@@ -67,7 +67,13 @@ text = "Version 0.1:
 Added splash screen
 Added main menu
 Added version notes
-Added credits screen"
+Added credits screen
+
+Version 0.2
+Added basic implementation of player's character with idle, running, jumping animation
+Added basic implementation of enemy character with idle and death animation
+Shortened WPI splash screen duration from 4 seconds to 2
+Refactored asset files location"
 horizontal_alignment = 1
 vertical_alignment = 3
 autowrap_mode = 2

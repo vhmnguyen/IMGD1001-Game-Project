@@ -19,4 +19,4 @@ func _on_version_notes_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	ButtonClickSfx.play_click()
-	get_tree().change_scene_to_file("res://scenes/Credits.tscn")
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

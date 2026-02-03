@@ -6,7 +6,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
 [node name="Game" type="Node2D"]
-position = Vector2(-1, 9)
 
 [node name="Pugalion" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(46, 32)
@@ -22,4 +21,4 @@ position = Vector2(44, 41)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="GroundGoblin" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(70, 23)
+position = Vector2(79, 23)
