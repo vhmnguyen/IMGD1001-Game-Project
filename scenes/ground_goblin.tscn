@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dsgqmw7jwvc47"]
 
 [ext_resource type="Script" uid="uid://ddto12wmqwime" path="res://scripts/ground_goblin.gd" id="1_0lhqa"]
-[ext_resource type="Texture2D" uid="uid://bpsmkmyfwdgt" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
+[ext_resource type="Texture2D" uid="uid://dfa7ygt3qkwiy" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dcwsh"]
 atlas = ExtResource("2_0lhqa")
@@ -83,7 +83,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [node name="GroundGoblin" type="Node2D"]
@@ -95,7 +95,6 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dcwsh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.019164221
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(-15, 14)

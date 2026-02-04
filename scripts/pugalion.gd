@@ -5,6 +5,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -225.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var isAttacking = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
