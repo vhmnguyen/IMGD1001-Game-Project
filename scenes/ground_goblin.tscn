@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsgqmw7jwvc47"]
+[gd_scene load_steps=16 format=3 uid="uid://dsgqmw7jwvc47"]
 
 [ext_resource type="Script" uid="uid://ddto12wmqwime" path="res://scripts/ground_goblin.gd" id="1_0lhqa"]
-[ext_resource type="Texture2D" uid="uid://dfa7ygt3qkwiy" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
+[ext_resource type="Texture2D" uid="uid://bpsmkmyfwdgt" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dcwsh"]
 atlas = ExtResource("2_0lhqa")
@@ -89,15 +89,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lhqa"]
 size = Vector2(8, 14)
 
-[node name="GroundGoblin" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on5mi"]
+size = Vector2(8, 14)
+
+[node name="GroundGoblin" type="CharacterBody2D"]
 script = ExtResource("1_0lhqa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-15, 11)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dcwsh")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15, 11)
+shape = SubResource("RectangleShape2D_0lhqa")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(-15, 14)
@@ -108,11 +115,19 @@ position = Vector2(-15, 14)
 target_position = Vector2(-6, 0)
 
 [node name="Hurtbox" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(-15, 11)
 shape = SubResource("RectangleShape2D_0lhqa")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["GroundGoblinHitbox"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-15, 11)
+shape = SubResource("RectangleShape2D_on5mi")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

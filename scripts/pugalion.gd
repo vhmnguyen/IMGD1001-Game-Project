@@ -3,10 +3,14 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -225.0
+var dead = false
+var isAttacking = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-var isAttacking = false
-@onready var collision_shape: CollisionShape2D = $CollisionArea/CollisionShape2D
+@onready var collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
+@onready var collision_area: Area2D = $Hitbox
+@onready var collision_shape_2d: CollisionShape2D = $Hurtbox/CollisionShape2D
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -59,3 +63,10 @@ func _on_animated_sprite_animation_finished() -> void:
 	if animated_sprite.animation == "attack":
 		isAttacking = false
 		collision_shape.disabled = true
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("GroundGoblinHitbox"):
+		dead = true
+		collision_shape_2d.disabled = true
+		#animated_sprite.play("death")
