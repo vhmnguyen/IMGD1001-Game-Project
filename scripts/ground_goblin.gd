@@ -1,4 +1,5 @@
-extends Node2D
+class_name GroundGoblin
+extends CharacterBody2D
 
 const SPEED = 80
 
@@ -7,7 +8,7 @@ var dead = false
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape_2d: CollisionShape2D = $Hurtbox/CollisionShape2D
+@onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 
 
 #func _process(delta: float) -> void:
@@ -24,8 +25,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "death":
 		queue_free()
 
-func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Headbutt"):
-		dead = true
-		collision_shape_2d.disabled = true
-		animated_sprite_2d.play("death")
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body is Pugalion:
+		body.dead = true

@@ -93,6 +93,8 @@ size = Vector2(8, 14)
 size = Vector2(8, 14)
 
 [node name="GroundGoblin" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_0lhqa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -114,20 +116,13 @@ target_position = Vector2(6, 0)
 position = Vector2(-15, 14)
 target_position = Vector2(-6, 0)
 
-[node name="Hurtbox" type="Area2D" parent="."]
-visible = false
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(-15, 11)
-shape = SubResource("RectangleShape2D_0lhqa")
-
 [node name="Hitbox" type="Area2D" parent="." groups=["GroundGoblinHitbox"]]
-collision_layer = 2
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-15, 11)
 shape = SubResource("RectangleShape2D_on5mi")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

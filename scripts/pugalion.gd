@@ -1,3 +1,4 @@
+class_name Pugalion
 extends CharacterBody2D
 
 
@@ -9,10 +10,20 @@ var isAttacking = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var collision_area: Area2D = $Hitbox
-@onready var collision_shape_2d: CollisionShape2D = $Hurtbox/CollisionShape2D
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
+	if not dead:
+		physics_process(delta)
+	else:
+		animated_sprite.play("death")
+
+
+func physics_process(delta: float) -> void:
+	#if dead:
+		#animated_sprite.play("death")
+		#queue_free()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -32,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		collision_shape.position.x = -24
-		
+
 	# Play animations
 	if is_on_floor():
 		if direction == 0 && isAttacking == false:
@@ -46,7 +57,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("attack")
 	else:
 		animated_sprite.play("jump")
-			
+
 	# Apply movement
 	if direction:
 		velocity.x = direction * SPEED
@@ -59,14 +70,18 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func _on_animated_sprite_animation_finished() -> void:
 	if animated_sprite.animation == "attack":
 		isAttacking = false
 		collision_shape.disabled = true
+		
+	if animated_sprite.animation == "death":
+		queue_free()
 
 
-func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("GroundGoblinHitbox"):
-		dead = true
-		collision_shape_2d.disabled = true
-		#animated_sprite.play("death")
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body is GroundGoblin:
+		body.dead = true
+		body.collision_shape_2d.disabled = true
+		body.animated_sprite_2d.play("death")
