@@ -23,9 +23,11 @@ func _physics_process(delta: float) -> void:
 	# Flip the sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
+		collision_shape.position.x = -12
 		
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		collision_shape.position.x = -24
 		
 	# Play animations
 	if is_on_floor():
