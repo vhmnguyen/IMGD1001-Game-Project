@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkght75hkev57"]
+[gd_scene load_steps=27 format=3 uid="uid://bkght75hkev57"]
 
 [ext_resource type="Script" uid="uid://bp54mes1s3n8h" path="res://scripts/pugalion.gd" id="1_ftvop"]
 [ext_resource type="Texture2D" uid="uid://cp35u0dwilyk1" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
@@ -102,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vfgyc")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -170,6 +170,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_gn633"]
 radius = 3.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ewqt"]
+radius = 4.0
+
 [node name="Pugalion" type="CharacterBody2D"]
 script = ExtResource("1_ftvop")
 
@@ -179,7 +182,18 @@ scale = Vector2(0.4375, 0.4375)
 sprite_frames = SubResource("SpriteFrames_b6dwm")
 animation = &"attack"
 autoplay = "idle"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-19, 6)
 shape = SubResource("CircleShape2D_gn633")
+
+[node name="CollisionArea" type="Area2D" parent="." groups=["Headbutt"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(-12, 6)
+shape = SubResource("CircleShape2D_3ewqt")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
