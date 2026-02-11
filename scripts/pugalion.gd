@@ -12,6 +12,7 @@ var isAttacking = false
 @onready var collision_area: Area2D = $Hitbox
 
 
+# This function will run first to check if character's dead 
 func _process(delta: float) -> void:
 	if not dead:
 		physics_process(delta)
@@ -20,10 +21,6 @@ func _process(delta: float) -> void:
 
 
 func physics_process(delta: float) -> void:
-	#if dead:
-		#animated_sprite.play("death")
-		#queue_free()
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -71,6 +68,7 @@ func physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+# Handles when certain animations are done playing (attack, death)
 func _on_animated_sprite_animation_finished() -> void:
 	if animated_sprite.animation == "attack":
 		isAttacking = false
@@ -78,8 +76,10 @@ func _on_animated_sprite_animation_finished() -> void:
 		
 	if animated_sprite.animation == "death":
 		queue_free()
+		get_tree().reload_current_scene()
 
 
+# Interaction with Ground Goblin
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is GroundGoblin:
 		body.dead = true
