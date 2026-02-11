@@ -70,7 +70,16 @@ Version 0.2
 Added basic implementation of player's character with idle, running, jumping animation
 Added basic implementation of enemy character with idle and death animation
 Shortened WPI splash screen duration from 4 seconds to 2
-Refactored asset files location"
+Refactored asset files location
+
+Version 0.3:
+Made a fixed camera for all levels
+Implemented interaction between character (Pugalion) and enemy (Ground Goblin) for combat
+Implemented Player death and respawn (scene reload)
+Made initial Tile blocks
+Fixed bug where hovering over \"Back\" button in Version Notes does not change its color
+Shortened WPI Splash Screen (again)
+Codes and files cleanup"
 horizontal_alignment = 1
 vertical_alignment = 3
 autowrap_mode = 2
