@@ -76,7 +76,7 @@ func _on_animated_sprite_animation_finished() -> void:
 		
 	if animated_sprite.animation == "death":
 		queue_free()
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 
 # Interaction with Ground Goblin
