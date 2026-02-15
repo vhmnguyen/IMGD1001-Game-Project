@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsgqmw7jwvc47"]
+[gd_scene load_steps=17 format=3 uid="uid://dsgqmw7jwvc47"]
 
 [ext_resource type="Script" uid="uid://ddto12wmqwime" path="res://scripts/ground_goblin.gd" id="1_0lhqa"]
-[ext_resource type="Texture2D" uid="uid://bpsmkmyfwdgt" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
+[ext_resource type="Texture2D" uid="uid://dfa7ygt3qkwiy" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
+[ext_resource type="AudioStream" uid="uid://fty8l81ldmke" path="res://assets/sfx/explosion_large.wav" id="3_on5mi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dcwsh"]
 atlas = ExtResource("2_0lhqa")
@@ -105,7 +106,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-15, 11)
 shape = SubResource("RectangleShape2D_0lhqa")
 
@@ -124,6 +124,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-15, 11.5)
 shape = SubResource("RectangleShape2D_on5mi")
+
+[node name="sfx_pugalion_death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_on5mi")
+volume_db = -6.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

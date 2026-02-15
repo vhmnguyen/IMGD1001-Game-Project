@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cjdf2xkq17h5j"]
 
-[ext_resource type="Texture2D" uid="uid://bbr8cd3kcqypt" path="res://assets/sprites/Tiles.png" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://b0fs0fq4jr4km" path="res://assets/sprites/Tiles.png" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dsgqmw7jwvc47" path="res://scenes/ground_goblin.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://beb51603borek" path="res://scenes/pause_menu.tscn" id="4_lbhrr"]
