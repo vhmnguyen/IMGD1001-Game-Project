@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c77rk21fcib4d"]
+[gd_scene load_steps=8 format=3 uid="uid://c77rk21fcib4d"]
 
 [ext_resource type="Script" uid="uid://dvvk3fnjad5mj" path="res://scripts/version_notes.gd" id="1_hep5x"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_7c5t5"]
+[ext_resource type="FontFile" uid="uid://df85cwvx7gtw8" path="res://assets/fonts/PixelifySans-Medium.ttf" id="3_rmqxm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hep5x"]
 bg_color = Color(1, 1, 1, 1)
@@ -60,6 +62,7 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7c5t5")
 text = "Version 0.1:
 Added splash screen
 Added main menu
@@ -95,7 +98,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("3_rmqxm")
+theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_hep5x")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2wokr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7c5t5")

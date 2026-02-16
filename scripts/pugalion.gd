@@ -6,6 +6,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -225.0
 var dead = false
 var isAttacking = false
+var isDashing = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
@@ -46,15 +47,20 @@ func physics_process(delta: float) -> void:
 
 	# Play animations
 	if is_on_floor():
-		if direction == 0 && isAttacking == false:
+		if direction == 0 && isAttacking == false && isDashing == false:
 			animated_sprite.play("idle")
-		elif direction == 0 && isAttacking == true:
+		elif direction == 0 && isAttacking == true && isDashing == false:
 			animated_sprite.play("attack")
-		elif direction != 0 && isAttacking == false:
+		elif direction != 0 && isAttacking == false && isDashing == false:
 			animated_sprite.play("run")
-		else:
+		elif direction != 0 && isAttacking == true && isDashing == false:
 			direction = 0
 			animated_sprite.play("attack")
+		elif direction == 0 && isDashing == true:
+			animated_sprite.play("dash")
+		elif direction != 0 && isDashing == true:
+			direction = 0
+			animated_sprite.play("dash")
 	else:
 		animated_sprite.play("jump")
 
@@ -66,8 +72,14 @@ func physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("attack") && is_on_floor():
 		isAttacking = true
+		isDashing = false
 		collision_shape.disabled = false
 		sfx_attack.play()
+		
+	if Input.is_action_just_pressed("dash") && is_on_floor():
+		isDashing = true
+		isAttacking = true
+		collision_shape.disabled = false
 
 	move_and_slide()
 
@@ -75,6 +87,11 @@ func physics_process(delta: float) -> void:
 # Handles when certain animations are done playing (attack, death)
 func _on_animated_sprite_animation_finished() -> void:
 	if animated_sprite.animation == "attack":
+		isAttacking = false
+		collision_shape.disabled = true
+		
+	if animated_sprite.animation == "dash":
+		isDashing = false
 		isAttacking = false
 		collision_shape.disabled = true
 		
