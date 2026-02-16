@@ -13,6 +13,7 @@ var isDashing = false
 @onready var collision_area: Area2D = $Hitbox
 @onready var sfx_jump: AudioStreamPlayer2D = $sfx_jump
 @onready var sfx_attack: AudioStreamPlayer2D = $sfx_attack
+@onready var sfx_pugalion_death: AudioStreamPlayer2D = $sfx_pugalion_death
 @onready var dash_timer: Timer = $dash_timer
 
 

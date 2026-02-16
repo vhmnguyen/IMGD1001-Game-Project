@@ -9,7 +9,6 @@ var target: Node2D = null
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
-@onready var sfx_pugalion_death: AudioStreamPlayer2D = $sfx_pugalion_death
 
 
 func _physics_process(_delta: float) -> void:
@@ -49,4 +48,4 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Pugalion:
 		body.dead = true
-		sfx_pugalion_death.play()
+		body.sfx_pugalion_death.play()

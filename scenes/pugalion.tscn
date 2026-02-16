@@ -1,9 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://bkght75hkev57"]
+[gd_scene load_steps=47 format=3 uid="uid://bkght75hkev57"]
 
 [ext_resource type="Script" uid="uid://bp54mes1s3n8h" path="res://scripts/pugalion.gd" id="1_ftvop"]
-[ext_resource type="Texture2D" uid="uid://cp35u0dwilyk1" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
+[ext_resource type="Texture2D" uid="uid://dhvttv5ciluq0" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
 [ext_resource type="AudioStream" uid="uid://cdsdptsam18ir" path="res://assets/sfx/jump.wav" id="3_3ewqt"]
 [ext_resource type="AudioStream" uid="uid://3l0j87fuhrq3" path="res://assets/sfx/punch.wav" id="4_m401t"]
+[ext_resource type="AudioStream" uid="uid://fty8l81ldmke" path="res://assets/sfx/explosion_large.wav" id="5_t25fn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afwnd"]
 atlas = ExtResource("1_sjrqj")
@@ -342,6 +343,10 @@ volume_db = -5.0
 [node name="sfx_attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_m401t")
 volume_db = -5.0
+
+[node name="sfx_pugalion_death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_t25fn")
+volume_db = -6.0
 
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.12
