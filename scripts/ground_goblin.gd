@@ -17,7 +17,7 @@ func _physics_process(_delta: float) -> void:
 		collision_shape_2d.disabled = true
 		animated_sprite_2d.play("death")
 		return
-	
+
 	if not idling and target:
 		var direction = (target.global_position - global_position).normalized()
 		animated_sprite_2d.flip_h = (direction.x > 0)

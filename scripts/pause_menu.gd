@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and get_tree().current_scene.name != "MainMenu" and get_tree().current_scene.name != "Credits" and get_tree().current_scene.name != "VersionNotes":	
 		if Input.is_action_just_pressed("pause") and not get_tree().paused:
 			show()
