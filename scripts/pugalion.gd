@@ -69,7 +69,10 @@ func physics_process(delta: float) -> void:
 		elif direction != 0 && isDashing == true:
 			animated_sprite.play("dash")
 	else:
-		animated_sprite.play("jump")
+		if isDashing:
+			animated_sprite.play("dash")
+		else:
+			animated_sprite.play("jump")
 
 	# Apply movement
 	if direction:
@@ -83,9 +86,9 @@ func physics_process(delta: float) -> void:
 		collision_shape.disabled = false
 		sfx_attack.play()
 	#Dashing	
-	if Input.is_action_just_pressed("dash") && is_on_floor():
+	if Input.is_action_just_pressed("dash"):
 		dash_timer.start()
-		SPEED *= 5
+		SPEED *= 3
 		velocity.x = direction * SPEED
 		isDashing = true
 		isAttacking = true
