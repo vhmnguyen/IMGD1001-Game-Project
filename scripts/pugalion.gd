@@ -2,7 +2,7 @@ class_name Pugalion
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+var SPEED = 100.0
 const JUMP_VELOCITY = -225.0
 var dead = false
 var isAttacking = false
@@ -13,6 +13,7 @@ var isDashing = false
 @onready var collision_area: Area2D = $Hitbox
 @onready var sfx_jump: AudioStreamPlayer2D = $sfx_jump
 @onready var sfx_attack: AudioStreamPlayer2D = $sfx_attack
+@onready var dash_timer: Timer = $dash_timer
 
 
 # This function will run first to check if character's dead 
@@ -47,19 +48,24 @@ func physics_process(delta: float) -> void:
 
 	# Play animations
 	if is_on_floor():
+		#Idle
 		if direction == 0 && isAttacking == false && isDashing == false:
 			animated_sprite.play("idle")
+		#Idle + Attack
 		elif direction == 0 && isAttacking == true && isDashing == false:
 			animated_sprite.play("attack")
+		#Run
 		elif direction != 0 && isAttacking == false && isDashing == false:
 			animated_sprite.play("run")
+		#Run + Attack
 		elif direction != 0 && isAttacking == true && isDashing == false:
 			direction = 0
 			animated_sprite.play("attack")
+		#Idle + Dash
 		elif direction == 0 && isDashing == true:
 			animated_sprite.play("dash")
+		#Run + Dash
 		elif direction != 0 && isDashing == true:
-			direction = 0
 			animated_sprite.play("dash")
 	else:
 		animated_sprite.play("jump")
@@ -69,14 +75,17 @@ func physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+	#Attacking
 	if Input.is_action_just_pressed("attack") && is_on_floor():
 		isAttacking = true
 		isDashing = false
 		collision_shape.disabled = false
 		sfx_attack.play()
-		
+	#Dashing	
 	if Input.is_action_just_pressed("dash") && is_on_floor():
+		dash_timer.start()
+		SPEED *= 5
+		velocity.x = direction * SPEED
 		isDashing = true
 		isAttacking = true
 		collision_shape.disabled = false
@@ -104,3 +113,8 @@ func _on_animated_sprite_animation_finished() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is GroundGoblin:
 		body.dead = true
+
+
+func _on_dash_timer_timeout() -> void:
+	#reset speed after dash
+	SPEED = 100.0
