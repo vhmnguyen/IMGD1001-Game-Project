@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://bkght75hkev57"]
 
 [ext_resource type="Script" uid="uid://bp54mes1s3n8h" path="res://scripts/pugalion.gd" id="1_ftvop"]
-[ext_resource type="Texture2D" uid="uid://cp35u0dwilyk1" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
+[ext_resource type="Texture2D" uid="uid://dhvttv5ciluq0" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
 [ext_resource type="AudioStream" uid="uid://cdsdptsam18ir" path="res://assets/sfx/jump.wav" id="3_3ewqt"]
 [ext_resource type="AudioStream" uid="uid://3l0j87fuhrq3" path="res://assets/sfx/punch.wav" id="4_m401t"]
 

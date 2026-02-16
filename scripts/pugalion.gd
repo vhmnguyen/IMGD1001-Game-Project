@@ -87,5 +87,3 @@ func _on_animated_sprite_animation_finished() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is GroundGoblin:
 		body.dead = true
-		body.collision_shape_2d.disabled = true
-		body.animated_sprite_2d.play("death")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsgqmw7jwvc47"]
+[gd_scene load_steps=18 format=3 uid="uid://dsgqmw7jwvc47"]
 
 [ext_resource type="Script" uid="uid://ddto12wmqwime" path="res://scripts/ground_goblin.gd" id="1_0lhqa"]
-[ext_resource type="Texture2D" uid="uid://dfa7ygt3qkwiy" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
+[ext_resource type="Texture2D" uid="uid://bpsmkmyfwdgt" path="res://assets/sprites/ground_goblin.png" id="2_0lhqa"]
 [ext_resource type="AudioStream" uid="uid://fty8l81ldmke" path="res://assets/sfx/explosion_large.wav" id="3_on5mi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dcwsh"]
@@ -93,6 +93,9 @@ size = Vector2(8, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on5mi"]
 size = Vector2(6, 11)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46khf"]
+size = Vector2(77.5625, 15)
+
 [node name="GroundGoblin" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 9
@@ -110,14 +113,6 @@ frame = 1
 position = Vector2(-15, 11)
 shape = SubResource("RectangleShape2D_0lhqa")
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(-15, 14)
-target_position = Vector2(6, 0)
-
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(-15, 14)
-target_position = Vector2(-6, 0)
-
 [node name="Hitbox" type="Area2D" parent="." groups=["GroundGoblinHitbox"]]
 collision_layer = 16
 collision_mask = 2
@@ -130,5 +125,15 @@ shape = SubResource("RectangleShape2D_on5mi")
 stream = ExtResource("3_on5mi")
 volume_db = -6.0
 
+[node name="DetectionBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox"]
+position = Vector2(-15, 11)
+shape = SubResource("RectangleShape2D_46khf")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="DetectionBox" to="." method="_on_detection_box_body_entered"]
+[connection signal="body_exited" from="DetectionBox" to="." method="_on_detection_box_body_exited"]
