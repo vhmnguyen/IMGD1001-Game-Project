@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvl4y5nie2q1c"]
 
 [ext_resource type="Script" uid="uid://0077o5u5jupl" path="res://scripts/death_screen.gd" id="1_uyutr"]
-[ext_resource type="Texture2D" uid="uid://e5dw62nrwgha" path="res://assets/sprites/IMGD_1001 Deathscreen.png.png" id="2_mqh5l"]
+[ext_resource type="Texture2D" uid="uid://e5dw62nrwgha" path="res://assets/sprites/imgd_1001_deathscreen.png.png" id="2_mqh5l"]
 [ext_resource type="FontFile" uid="uid://df85cwvx7gtw8" path="res://assets/fonts/PixelifySans-Medium.ttf" id="3_7ns25"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itto5"]
