@@ -1,7 +1,7 @@
 [gd_scene load_steps=47 format=3 uid="uid://bkght75hkev57"]
 
 [ext_resource type="Script" uid="uid://bp54mes1s3n8h" path="res://scripts/pugalion.gd" id="1_ftvop"]
-[ext_resource type="Texture2D" uid="uid://dhvttv5ciluq0" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
+[ext_resource type="Texture2D" uid="uid://cp35u0dwilyk1" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
 [ext_resource type="AudioStream" uid="uid://cdsdptsam18ir" path="res://assets/sfx/jump.wav" id="3_3ewqt"]
 [ext_resource type="AudioStream" uid="uid://3l0j87fuhrq3" path="res://assets/sfx/punch.wav" id="4_m401t"]
 [ext_resource type="AudioStream" uid="uid://fty8l81ldmke" path="res://assets/sfx/explosion_large.wav" id="5_t25fn"]
@@ -309,7 +309,7 @@ animations = [{
 size = Vector2(12, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ewqt"]
-radius = 4.0
+radius = 6.0
 
 [node name="Pugalion" type="CharacterBody2D"]
 collision_layer = 2
@@ -332,7 +332,7 @@ collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-12, 6)
+position = Vector2(-13, 5)
 shape = SubResource("CircleShape2D_3ewqt")
 disabled = true
 
