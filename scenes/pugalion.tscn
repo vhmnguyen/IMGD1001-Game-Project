@@ -1,10 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://bkght75hkev57"]
+[gd_scene load_steps=48 format=3 uid="uid://bkght75hkev57"]
 
 [ext_resource type="Script" uid="uid://bp54mes1s3n8h" path="res://scripts/pugalion.gd" id="1_ftvop"]
 [ext_resource type="Texture2D" uid="uid://cp35u0dwilyk1" path="res://assets/sprites/pugalion.png" id="1_sjrqj"]
 [ext_resource type="AudioStream" uid="uid://cdsdptsam18ir" path="res://assets/sfx/jump.wav" id="3_3ewqt"]
 [ext_resource type="AudioStream" uid="uid://3l0j87fuhrq3" path="res://assets/sfx/punch.wav" id="4_m401t"]
 [ext_resource type="AudioStream" uid="uid://fty8l81ldmke" path="res://assets/sfx/explosion_large.wav" id="5_t25fn"]
+[ext_resource type="AudioStream" uid="uid://c3t8uxis130l3" path="res://assets/sfx/undesired_effect.wav" id="6_7p5x0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afwnd"]
 atlas = ExtResource("1_sjrqj")
@@ -320,7 +321,7 @@ script = ExtResource("1_ftvop")
 position = Vector2(-18, 4)
 scale = Vector2(0.4375, 0.4375)
 sprite_frames = SubResource("SpriteFrames_b6dwm")
-animation = &"jump"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -348,9 +349,16 @@ volume_db = -5.0
 stream = ExtResource("5_t25fn")
 volume_db = -6.0
 
+[node name="sfx_dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7p5x0")
+volume_db = -5.0
+
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.12
+
+[node name="dash_again_timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]

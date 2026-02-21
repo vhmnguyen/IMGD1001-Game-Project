@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://bd8444c7jqskh"]
 
 [ext_resource type="Script" uid="uid://car37asrqpnhp" path="res://scripts/main_menu.gd" id="1_0bfng"]
-[ext_resource type="Texture2D" uid="uid://c7obeoc577o8e" path="res://assets/sprites/imgd_1001_ts.png" id="2_yb5uv"]
-[ext_resource type="Texture2D" uid="uid://k1p45rpgh830" path="res://assets/sprites/imgd_1001_title.png" id="3_h8c6n"]
+[ext_resource type="Texture2D" uid="uid://dnv8x4kbja3vw" path="res://assets/sprites/imgd_1001_ts.png" id="2_yb5uv"]
+[ext_resource type="Texture2D" uid="uid://dwj4rwfxtgut8" path="res://assets/sprites/imgd_1001_title.png" id="3_h8c6n"]
 [ext_resource type="FontFile" uid="uid://df85cwvx7gtw8" path="res://assets/fonts/PixelifySans-Medium.ttf" id="4_yb5uv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0bfng"]

@@ -8,27 +8,30 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and get_tree().current_scene.name != "MainMenu" and get_tree().current_scene.name != "Credits" and get_tree().current_scene.name != "VersionNotes":	
-		if Input.is_action_just_pressed("pause") and not get_tree().paused:
+	if Input.is_action_just_pressed("pause") and get_tree().current_scene.name != "MainMenu" and get_tree().current_scene.name != "Credits" and get_tree().current_scene.name != "VersionNotes" and get_tree().current_scene.name != "SplashScreen" and get_tree().current_scene.name != "DeathScreen":	
+		if not get_tree().paused:
 			show()
 			get_tree().paused = true
-		elif Input.is_action_just_pressed("pause") and get_tree().paused:
+		elif get_tree().paused:
 			hide()
 			get_tree().paused = false
 
 
 func _on_resume_pressed() -> void:
+	ButtonClickSfx.play_click()
 	hide()
 	get_tree().paused = false
 
 
 func _on_restart_pressed() -> void:
+	ButtonClickSfx.play_click()
 	hide()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
 func _on_quit_pressed() -> void:
+	ButtonClickSfx.play_click()
 	hide()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
