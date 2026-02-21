@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://biakhjkecwkas"]
+
+[ext_resource type="Script" uid="uid://bk2ou2g47wtvc" path="res://scripts/tutorial_ui.gd" id="1_6gjci"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_58d3m"]
+
+[node name="TutorialUI" type="CanvasLayer"]
+script = ExtResource("1_6gjci")
+
+[node name="Intro" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = -6.0
+offset_top = 16.0
+offset_right = 429.0
+offset_bottom = 325.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("2_58d3m")
+theme_override_font_sizes/font_size = 40
+text = "In this level, you will
+face deadly foes.
+
+Don't let them touch
+you! Simply jump over
+them and proceed."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jumped" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+offset_left = 150.0
+offset_top = 31.0
+offset_right = 585.0
+offset_bottom = 340.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("2_58d3m")
+theme_override_font_sizes/font_size = 40
+text = "Good Job!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 163.0
+offset_top = -25.0
+offset_right = 598.0
+offset_bottom = 284.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("2_58d3m")
+theme_override_font_sizes/font_size = 40
+text = "Alternatively, you can
+get close to them and
+press C to attack."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attacked" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+offset_left = 11.0
+offset_top = -40.0
+offset_right = 446.0
+offset_bottom = 269.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("2_58d3m")
+theme_override_font_sizes/font_size = 40
+text = "Good job!"
+horizontal_alignment = 1
+vertical_alignment = 1
