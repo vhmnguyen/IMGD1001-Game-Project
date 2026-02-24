@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://1mlw5w681023"]
+[gd_scene load_steps=33 format=3 uid="uid://1mlw5w681023"]
 
+[ext_resource type="Script" uid="uid://kdvh2dc155qe" path="res://scripts/braizer.gd" id="1_7onad"]
 [ext_resource type="Texture2D" uid="uid://csssa50lh77s" path="res://assets/sprites/Braizer.png" id="1_lkglb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkrxa"]
@@ -211,7 +212,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_881on"]
+radius = 6.0
+
 [node name="Brazier" type="Node2D"]
+script = ExtResource("1_7onad")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
@@ -219,3 +224,11 @@ scale = Vector2(0.24609375, 0.21874999)
 sprite_frames = SubResource("SpriteFrames_4ixkt")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_881on")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
