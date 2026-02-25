@@ -11,21 +11,26 @@ var target: Node2D = null
 @onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if dead:
 		velocity = Vector2.ZERO
 		collision_shape_2d.disabled = true
 		animated_sprite_2d.play("death")
 		return
 
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
 	if not idling and target:
 		var direction = (target.global_position - global_position).normalized()
-		animated_sprite_2d.flip_h = (direction.x > 0)
-		velocity = direction * SPEED
-		move_and_slide()
+		
+		animated_sprite_2d.flip_h = direction.x > 0
+		
+		velocity.x = direction.x * SPEED
 	else:
-		velocity = Vector2.ZERO
-		move_and_slide()
+		velocity.x = 0
+
+	move_and_slide()
 
 
 func _on_detection_box_body_entered(body: Node2D) -> void:

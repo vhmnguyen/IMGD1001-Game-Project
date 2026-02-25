@@ -100,7 +100,17 @@ text = "
 - Overhauled fonts 
 - Overhauled Ground Goblin's interaction with Pugalion, now uses tracking instead of basic collision detection 
 - Fixed various bugs and warnings 
-- Codes and files cleanup"
+- Codes and files cleanup
+
+[center][b]Version 0.5[/b][/center] 
+- Added levels 1 - 3
+- Added tutorial text at each level
+- Added checkpoint (brazier) at the end of each level
+- Added collectibles (coins), collectible tracker HUD, sfx, and animation
+- Overhauled Ground Goblin's detection range
+- Fixed various bugs regarding Ground Goblin's physics process
+- Fixed various bugs regarding Pugalion's dash function
+- Fixed bug where user can trigger Pause scene while in Death scene"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2

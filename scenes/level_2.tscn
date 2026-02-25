@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://dgriiaoxfovv7"]
 
 [ext_resource type="Script" uid="uid://cvv36o1pyytan" path="res://scripts/game_manager.gd" id="1_ne2mo"]
-[ext_resource type="Texture2D" uid="uid://shrkp2sat2ii" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
-[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/BGTiles.png" id="3_que50"]
+[ext_resource type="Texture2D" uid="uid://bbr8cd3kcqypt" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
+[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/bg_tiles.png" id="3_que50"]
 [ext_resource type="PackedScene" uid="uid://c128lyrhcpmie" path="res://scenes/hud.tscn" id="4_hey2k"]
-[ext_resource type="PackedScene" uid="uid://biakhjkecwkas" path="res://scenes/tutorial_ui.tscn" id="5_6cvei"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="5_172wr"]
 [ext_resource type="PackedScene" uid="uid://dsgqmw7jwvc47" path="res://scenes/ground_goblin.tscn" id="6_g2hoc"]
 [ext_resource type="PackedScene" uid="uid://c8ynsudewl6wa" path="res://scenes/coin.tscn" id="7_fldb1"]
 [ext_resource type="PackedScene" uid="uid://bo0w8b6lfedo7" path="res://scenes/killzone.tscn" id="8_guvtl"]
 [ext_resource type="PackedScene" uid="uid://1mlw5w681023" path="res://scenes/braizer.tscn" id="9_que50"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="10_que50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igmy8"]
 texture = ExtResource("2_6cvei")
@@ -104,8 +104,6 @@ layer_0/tile_data = PackedInt32Array(524287, 65536, 0, 458752, 65536, 0, 458753,
 position = Vector2(26, 47)
 collision_mask = 1
 
-[node name="TutorialUI" parent="." instance=ExtResource("5_6cvei")]
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="GroundGoblin" parent="Enemies" instance=ExtResource("6_g2hoc")]
@@ -144,3 +142,36 @@ position = Vector2(132, 77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_bv48q")
+
+[node name="Intro" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = -6.0
+offset_top = 16.0
+offset_right = 429.0
+offset_bottom = 325.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("10_que50")
+theme_override_font_sizes/font_size = 40
+text = "In this level, you will
+face deadly foes.
+
+Don't let them touch
+you! Simply jump over
+them and proceed."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 163.0
+offset_top = -25.0
+offset_right = 598.0
+offset_bottom = 284.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("10_que50")
+theme_override_font_sizes/font_size = 40
+text = "Alternatively, you can
+get close to them and
+press X to attack."
+horizontal_alignment = 1
+vertical_alignment = 1
