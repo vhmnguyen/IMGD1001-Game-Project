@@ -1,15 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://cjdf2xkq17h5j"]
+[gd_scene load_steps=16 format=3 uid="uid://cjdf2xkq17h5j"]
 
 [ext_resource type="Script" uid="uid://cvv36o1pyytan" path="res://scripts/game_manager.gd" id="1_15mv3"]
-[ext_resource type="Texture2D" uid="uid://shrkp2sat2ii" path="res://assets/sprites/Tiles.png" id="2_e3sih"]
+[ext_resource type="Texture2D" uid="uid://d2rxinr6ijmir" path="res://assets/sprites/Tiles.png" id="2_e3sih"]
 [ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/BGTiles.png" id="3_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://c128lyrhcpmie" path="res://scenes/hud.tscn" id="4_2os1m"]
 [ext_resource type="Texture2D" uid="uid://csssa50lh77s" path="res://assets/sprites/Braizer.png" id="4_e3sih"]
 [ext_resource type="PackedScene" uid="uid://c8ynsudewl6wa" path="res://scenes/coin.tscn" id="6_7gny6"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="7_2aecg"]
 [ext_resource type="PackedScene" uid="uid://bo0w8b6lfedo7" path="res://scenes/killzone.tscn" id="8_6dial"]
-[ext_resource type="FontFile" uid="uid://cxdu1ujuuvohx" path="res://assets/fonts/PixelOperator8.ttf" id="8_15mv3"]
 [ext_resource type="PackedScene" uid="uid://1mlw5w681023" path="res://scenes/braizer.tscn" id="10_2y5yt"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="11_2os1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
 texture = ExtResource("2_e3sih")
@@ -122,13 +122,6 @@ sources/2 = SubResource("TileSetAtlasSource_2y5yt")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_2y5yt"]
-font_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_15mv3"]
-font = ExtResource("8_15mv3")
-font_size = 8
-
 [node name="Level1" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="."]
@@ -169,26 +162,34 @@ position = Vector2(132, 77)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -5.0
-offset_top = 17.0
-offset_right = 43.0
-offset_bottom = 37.0
-theme_override_fonts/font = ExtResource("8_15mv3")
-theme_override_font_sizes/font_size = 8
-text = "Space to jump"
-label_settings = SubResource("LabelSettings_2y5yt")
+[node name="Movement Tutorial" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = -9.0
+offset_top = 14.0
+offset_right = 716.0
+offset_bottom = 376.5
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("11_2os1m")
+theme_override_font_sizes/font_size = 64
+text = "Use W,A,S,D or Arrow Keys to move!
+Use space to jump"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 121.0
-offset_top = 28.0
-offset_right = 169.0
-offset_bottom = 51.0
-text = "Don't Fall!"
-label_settings = SubResource("LabelSettings_15mv3")
+[node name="Fall Label" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 119.0
+offset_top = 29.0
+offset_right = 781.5
+offset_bottom = 332.0
+scale = Vector2(0.08, 0.08)
+theme_override_fonts/font = ExtResource("11_2os1m")
+theme_override_font_sizes/font_size = 124
+text = "Dont
+Fall!"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Pugalion" parent="." instance=ExtResource("7_2aecg")]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://dgriiaoxfovv7"]
 
 [ext_resource type="Script" uid="uid://cvv36o1pyytan" path="res://scripts/game_manager.gd" id="1_ne2mo"]
-[ext_resource type="Texture2D" uid="uid://bbr8cd3kcqypt" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
-[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/bg_tiles.png" id="3_que50"]
+[ext_resource type="Texture2D" uid="uid://d2rxinr6ijmir" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
+[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/BGTiles.png" id="3_que50"]
 [ext_resource type="PackedScene" uid="uid://c128lyrhcpmie" path="res://scenes/hud.tscn" id="4_hey2k"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="5_172wr"]
 [ext_resource type="PackedScene" uid="uid://dsgqmw7jwvc47" path="res://scenes/ground_goblin.tscn" id="6_g2hoc"]
@@ -100,10 +100,6 @@ layer_0/tile_data = PackedInt32Array(524287, 65536, 0, 458752, 65536, 0, 458753,
 
 [node name="HUD" parent="." instance=ExtResource("4_hey2k")]
 
-[node name="Pugalion" parent="." instance=ExtResource("5_172wr")]
-position = Vector2(26, 47)
-collision_mask = 1
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="GroundGoblin" parent="Enemies" instance=ExtResource("6_g2hoc")]
@@ -130,7 +126,7 @@ position = Vector2(225, 20)
 [node name="Coin4" parent="Coins" instance=ExtResource("7_fldb1")]
 position = Vector2(101, -52)
 
-[node name="Brazier" parent="Coins" instance=ExtResource("9_que50")]
+[node name="Brazier" parent="." instance=ExtResource("9_que50")]
 position = Vector2(120, -59)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -152,12 +148,9 @@ offset_bottom = 325.0
 scale = Vector2(0.08, 0.08)
 theme_override_fonts/font = ExtResource("10_que50")
 theme_override_font_sizes/font_size = 40
-text = "In this level, you will
-face deadly foes.
-
-Don't let them touch
-you! Simply jump over
-them and proceed."
+text = "Don't let the goblins touch
+you! Jump over
+them!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -175,3 +168,7 @@ get close to them and
 press X to attack."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Pugalion" parent="." instance=ExtResource("5_172wr")]
+position = Vector2(26, 47)
+collision_mask = 1
