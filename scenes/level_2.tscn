@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dgriiaoxfovv7"]
 
-[ext_resource type="Texture2D" uid="uid://b0fs0fq4jr4km" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
-[ext_resource type="Texture2D" uid="uid://0vi3jha13q0s" path="res://assets/sprites/BGTiles.png" id="3_que50"]
+[ext_resource type="Texture2D" uid="uid://d2rxinr6ijmir" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
+[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/BGTiles.png" id="3_que50"]
 [ext_resource type="PackedScene" uid="uid://c128lyrhcpmie" path="res://scenes/hud.tscn" id="4_hey2k"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="5_172wr"]
 [ext_resource type="PackedScene" uid="uid://dsgqmw7jwvc47" path="res://scenes/ground_goblin.tscn" id="6_g2hoc"]
@@ -39,6 +39,7 @@ texture_region_size = Vector2i(64, 64)
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:2/next_alternative_id = 2
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:3/next_alternative_id = 2
 0:3/0 = 0
 1:3/next_alternative_id = 2
@@ -51,11 +52,13 @@ texture_region_size = Vector2i(64, 64)
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 16, -32, 16, 32, -32, 32)
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 3:3/0 = 0
 4:0/0 = 0
 4:1/0 = 0
 4:3/0 = 0
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, -32, -17.498692, 32, -18.063164, 32, 32)
 2:4/0 = 0
