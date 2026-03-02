@@ -27,6 +27,7 @@ func _on_restart_pressed() -> void:
 	ButtonClickSfx.play_click()
 	hide()
 	get_tree().paused = false
+	GameManager.score = 0
 	get_tree().reload_current_scene()
 
 
@@ -34,4 +35,5 @@ func _on_quit_pressed() -> void:
 	ButtonClickSfx.play_click()
 	hide()
 	get_tree().paused = false
+	GameManager.score = 0
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
