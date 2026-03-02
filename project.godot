@@ -21,6 +21,7 @@ boot_splash/minimum_display_time=2500
 MusicPlayer="*res://scenes/music_player.tscn"
 ButtonClickSfx="*res://scenes/button_click_sfx.tscn"
 PauseMenu="*res://scenes/pause_menu.tscn"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 

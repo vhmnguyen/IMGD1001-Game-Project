@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgriiaoxfovv7"]
+[gd_scene load_steps=14 format=3 uid="uid://dgriiaoxfovv7"]
 
-[ext_resource type="Script" uid="uid://cvv36o1pyytan" path="res://scripts/game_manager.gd" id="1_ne2mo"]
-[ext_resource type="Texture2D" uid="uid://d2rxinr6ijmir" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
-[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/BGTiles.png" id="3_que50"]
+[ext_resource type="Texture2D" uid="uid://bbr8cd3kcqypt" path="res://assets/sprites/Tiles.png" id="2_6cvei"]
+[ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/bg_tiles.png" id="3_que50"]
 [ext_resource type="PackedScene" uid="uid://c128lyrhcpmie" path="res://scenes/hud.tscn" id="4_hey2k"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="5_172wr"]
 [ext_resource type="PackedScene" uid="uid://dsgqmw7jwvc47" path="res://scenes/ground_goblin.tscn" id="6_g2hoc"]
@@ -88,9 +87,6 @@ sources/1 = SubResource("TileSetAtlasSource_wdtqu")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bv48q"]
 
 [node name="Level2" type="Node2D"]
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("1_ne2mo")
 
 [node name="environment_tilemap" type="TileMap" parent="."]
 scale = Vector2(0.125, 0.125)
