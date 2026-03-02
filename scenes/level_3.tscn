@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://pwcyu1hbv37k"]
 
 [ext_resource type="Script" uid="uid://cvv36o1pyytan" path="res://scripts/game_manager.gd" id="1_wae8j"]
-[ext_resource type="Texture2D" uid="uid://d2rxinr6ijmir" path="res://assets/sprites/tiles.png" id="2_ha73p"]
+[ext_resource type="Texture2D" uid="uid://d2rxinr6ijmir" path="res://assets/sprites/Tiles.png" id="2_ha73p"]
 [ext_resource type="Texture2D" uid="uid://crfnquy2j0qra" path="res://assets/sprites/BGTiles.png" id="3_vcx5n"]
 [ext_resource type="PackedScene" uid="uid://c128lyrhcpmie" path="res://scenes/hud.tscn" id="4_56dhn"]
 [ext_resource type="PackedScene" uid="uid://bkght75hkev57" path="res://scenes/pugalion.tscn" id="5_ax3dk"]
@@ -50,7 +50,7 @@ texture_region_size = Vector2i(64, 64)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, 32, -16, 32, 32, -32, 32)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 16, -32, 16, 32, -32, 32)
 3:2/0 = 0
 3:3/0 = 0
 4:0/0 = 0
