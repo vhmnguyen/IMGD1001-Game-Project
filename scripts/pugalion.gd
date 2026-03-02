@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	else:
 		animated_sprite.play("death")
 		animated_sprite.z_index = 10
+		GameManager.score = 0
 
 
 func physics_process(delta: float) -> void:
