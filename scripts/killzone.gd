@@ -6,4 +6,3 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Pugalion:
 		body.dead = true
 		sfx_killzone.play()
-	#body.get_node("CollisionShape2D").queue_free()

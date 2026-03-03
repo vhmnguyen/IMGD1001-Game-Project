@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 
-#@onready var game_manager: Node2D = $"../GameManager"
 @onready var label: Label = $Label
 
 
