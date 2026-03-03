@@ -113,6 +113,13 @@ text = "
 - Fixed various bugs regarding Pugalion's dash function
 - Fixed bug where user can trigger Pause scene while in Death scene
 
+[center][b]Version 0.6[/b][/center] 
+- Added final level and Pugalion's wing (endgame)
+- Overhauled Credits scene
+- Major bug fixes
+- Code cleanup
+- File cleanup
+
 
 
 
