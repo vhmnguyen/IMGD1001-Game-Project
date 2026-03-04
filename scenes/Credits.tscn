@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://crhvortksxg3c"]
+[gd_scene load_steps=8 format=3 uid="uid://crhvortksxg3c"]
 
 [ext_resource type="Script" uid="uid://dbvr38kc35cgv" path="res://scripts/credits.gd" id="1_hi4w3"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_gw1d4"]
+[ext_resource type="FontFile" uid="uid://df85cwvx7gtw8" path="res://assets/fonts/PixelifySans-Medium.ttf" id="2_spvsy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxo21"]
 bg_color = Color(1, 1, 1, 1)
@@ -50,6 +52,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 162.0
+offset_right = -2.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -60,16 +66,19 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gw1d4")
+theme_override_font_sizes/font_size = 45
 text = "Collaborators:
 
 Programming:
-[Insert Names]
+Thomas Gilbert & Vu Nguyen
 
 Art:
-[Insert Names]
+Gabe Casañas
 
 Music:
-[Insert Names]
+Non-copyrighted artist
 
 
 
@@ -91,7 +100,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("2_spvsy")
+theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_mxo21")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hi4w3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_spvsy")

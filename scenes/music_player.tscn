@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bclgg6owf38ey"]
 
-[ext_resource type="AudioStream" uid="uid://btk4unjsvr8fk" path="res://assets/music/a_voice_low.mp3" id="1_ql6qh"]
+[ext_resource type="AudioStream" uid="uid://be7fiugcgg1vy" path="res://assets/music/a_voice_low.mp3" id="1_ql6qh"]
 [ext_resource type="Script" uid="uid://cfflhjuv2tu2d" path="res://scripts/music_player.gd" id="2_l7xiw"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_ql6qh")
+volume_db = -20.0
 parameters/looping = false
 script = ExtResource("2_l7xiw")

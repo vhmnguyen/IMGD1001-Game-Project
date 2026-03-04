@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c128lyrhcpmie"]
+
+[ext_resource type="Script" uid="uid://dcaq8nxus16m5" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_oo0fn"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ahhtf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 129.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 40

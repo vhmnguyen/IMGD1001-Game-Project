@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c77rk21fcib4d"]
+[gd_scene load_steps=9 format=3 uid="uid://c77rk21fcib4d"]
 
 [ext_resource type="Script" uid="uid://dvvk3fnjad5mj" path="res://scripts/version_notes.gd" id="1_hep5x"]
+[ext_resource type="FontFile" uid="uid://ryvwbh8l10hb" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_7c5t5"]
+[ext_resource type="FontFile" uid="uid://yccp6qqr0jd1" path="res://assets/fonts/PixelifySans-Bold.ttf" id="3_np6hq"]
+[ext_resource type="FontFile" uid="uid://df85cwvx7gtw8" path="res://assets/fonts/PixelifySans-Medium.ttf" id="3_rmqxm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hep5x"]
 bg_color = Color(1, 1, 1, 1)
@@ -8,34 +11,31 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_offset = Vector2(5, 3.41)
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wokr"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.4351923, 0.43519226, 0.43519226, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7c5t5"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmqxm"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmqxm"]
 
 [node name="VersionNotes" type="Control"]
 layout_mode = 3
@@ -51,26 +51,85 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2.0
-offset_bottom = 7.0
+offset_left = 128.0
+offset_right = -128.0
 grow_horizontal = 2
 grow_vertical = 2
+vertical_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(600, 0)
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Version 0.1:
-Added splash screen
-Added main menu
-Added version notes
-Added credits screen"
-horizontal_alignment = 1
-vertical_alignment = 3
+theme_override_fonts/normal_font = ExtResource("2_7c5t5")
+theme_override_fonts/bold_font = ExtResource("3_np6hq")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "
+[center][b]Version 0.1[/b][/center] 
+- Added splash screen
+- Added main menu
+- Added version notes
+- Added credits screen
+
+[center][b]Version 0.2[/b][/center] 
+- Added basic implementation of player's character with idle, running, jumping animation 
+- Added basic implementation of enemy character with idle and death animation 
+- Shortened WPI splash screen duration from 4 seconds to 2 
+- Refactored asset files location 
+
+[center][b]Version 0.3[/b][/center] 
+- Made a fixed camera for all levels 
+- Implemented interaction between character (Pugalion) and enemy (Ground Goblin) for combat 
+- Implemented Player death and respawn (scene reload) 
+- Made initial Tile blocks 
+- Fixed bug where hovering over \"Back\" button in Version Notes does not change its color 
+- Shortened WPI Splash Screen (again) 
+- Codes and files cleanup 
+
+[center][b]Version 0.4[/b][/center] 
+- Added Dash animation and keybind for Pugalion 
+- Added basic environmental tiles 
+- Added interactions between Pugalion and environment 
+- Added interactions between Ground Goblin and environment 
+- Added SFX for Pugalion's attack, jump, and death 
+- Added pause menu and death screen 
+- Added world boundary 
+- Overhauled fonts 
+- Overhauled Ground Goblin's interaction with Pugalion, now uses tracking instead of basic collision detection 
+- Fixed various bugs and warnings 
+- Codes and files cleanup
+
+[center][b]Version 0.5[/b][/center] 
+- Added levels 1 - 3
+- Added tutorial text at each level
+- Added checkpoint (brazier) at the end of each level
+- Added collectibles (coins), collectible tracker HUD, sfx, and animation
+- Overhauled Ground Goblin's detection range
+- Fixed various bugs regarding Ground Goblin's physics process
+- Fixed various bugs regarding Pugalion's dash function
+- Fixed bug where user can trigger Pause scene while in Death scene
+
+[center][b]Version 0.6[/b][/center] 
+- Added final level and Pugalion's wing (endgame)
+- Overhauled Credits scene
+- Major bug fixes
+- Code cleanup
+- File cleanup
+
+
+
+
+
+
+"
+fit_content = true
+scroll_active = false
 autowrap_mode = 2
+vertical_alignment = 3
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
@@ -78,15 +137,17 @@ offset_left = 3.0
 offset_top = 954.0
 offset_right = 167.0
 offset_bottom = 1021.0
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("3_rmqxm")
+theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_hep5x")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2wokr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7c5t5")
-theme_override_styles/focus = SubResource("StyleBoxFlat_rmqxm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rmqxm")
 text = "Back"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

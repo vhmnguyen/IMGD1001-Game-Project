@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvl4y5nie2q1c"]
+
+[ext_resource type="Script" uid="uid://0077o5u5jupl" path="res://scripts/death_screen.gd" id="1_uyutr"]
+[ext_resource type="Texture2D" uid="uid://e5dw62nrwgha" path="res://assets/sprites/imgd_1001_deathscreen.png.png" id="2_mqh5l"]
+[ext_resource type="FontFile" uid="uid://df85cwvx7gtw8" path="res://assets/fonts/PixelifySans-Medium.ttf" id="3_7ns25"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itto5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyutr"]
+bg_color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwo6e"]
+bg_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.20392157)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqh5l"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uyutr")
+
+[node name="Imgd1001Deathscreen_png" type="Sprite2D" parent="."]
+position = Vector2(512.125, 512.12506)
+scale = Vector2(15.996096, 15.996093)
+texture = ExtResource("2_mqh5l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 102.0
+offset_top = 251.0
+offset_right = 864.0
+offset_bottom = 378.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 882.0
+offset_right = 405.71643
+offset_bottom = 978.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7ns25")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_itto5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uyutr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwo6e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mqh5l")
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 880.0
+offset_right = 867.97015
+offset_bottom = 976.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7ns25")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_itto5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uyutr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwo6e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mqh5l")
+text = "Main Menu"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
